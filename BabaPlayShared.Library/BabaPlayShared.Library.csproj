@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Title>BabaPlayShared.Library</Title>
+    <PackageId>BabaPlayShared.Library</PackageId>
+    <Description>This package contains common resources can be shared across BabaPlay projects.</Description>
+    <Authors>Ronaldo Estrela</Authors>
+    <Company>Baba Play</Company>
+    <SignAssembly>true</SignAssembly>
+    <PackageRequiresLicenseAcceptance>true</PackageRequiresLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/BabaPlay/BabaPlayShared.Library</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Constants/" />
+    <Folder Include="Models/Requests/Associados/" />
+    <Folder Include="Models/Requests/Associations/" />
+    <Folder Include="Models/Requests/Tenancy/" />
+    <Folder Include="Models/Requests/Token/" />
+    <Folder Include="Models/Responses/Associados/" />
+    <Folder Include="Models/Responses/Associations/" />
+    <Folder Include="Models/Responses/Identity/" />
+    <Folder Include="Models/Responses/Tenency/" />
+    <Folder Include="Models/Responses/Token/" />
+    <Folder Include="Wrappers/" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,74 @@
+# Visual Studio
+.vs/
+
+# Build results
+[Bb]in/
+[Oo]bj/
+
+# NuGet packages
+*.nupkg
+# The packages folder can be ignored because of Package Restore
+**/packages/*
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Auto-generated files
+*. generated.cs
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# Others
+*.cache
+*.log
+
+# dotnet core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Publish output
+wwwroot/dist/
+
+# SQL Server files
+*.mdf
+*.ldf
+
+# Packages
+*.nupkg
+
+# Rider
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Build directories
+**/obj/
+**/bin/
+
+# Rider
+.idea/
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# Temporary files
+*.tmp
+*.temp
+
+# Visual Studio Code
+.vscode/
+
+# SonarQube
+.sonarqube/
