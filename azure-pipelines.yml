@@ -18,7 +18,7 @@ variables:
 
   # Semantic Versioning Variables
   majorVersion: 1  # Adjust manually for breaking changes
-  minorVersion: 0  # Adjust manually for new features
+  minorVersion: 1  # Adjust manually for new features
   patchVersion: $[counter(variables['Build.SourceBranchName'], 0)]  # Auto-increment per build on the same branch
 
   # Compose full version
