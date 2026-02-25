@@ -12,11 +12,51 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+variables:
+  buildConfiguration: 'Release'
+  packageOutputPath: '$(Build.ArtifactStagingDirectory)/packages'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+  # Semantic Versioning Variables
+  majorVersion: 1  # Adjust manually for breaking changes
+  minorVersion: 0  # Adjust manually for new features
+  patchVersion: $[counter(variables['Build.SourceBranchName'], 0)]  # Auto-increment per build on the same branch
+
+  # Compose full version
+  packageVersion: "$(majorVersion).$(minorVersion).$(patchVersion)"
+
+stages:
+  - stage: BuildAndPublish
+    displayName: 'Build, Pack, and Publish NuGet Package'
+    jobs:
+      - job: BuildJob
+        displayName: 'Build, Pack, and Push NuGet Package'
+        steps:
+          - task: NuGetToolInstaller@1
+            displayName: 'Install NuGet'
+          - task: NuGetCommand@2
+            displayName: 'Restore NuGet Packages'
+            inputs:
+              command: 'restore'
+              restoreSolution: '**/*.sln'              
+
+          - task: DotNetCoreCLI@2
+            displayName: 'Build Project'
+            inputs:
+              command: 'build'
+              projects: '**/*.csproj'
+              arguments: '--configuration $(buildConfiguration)'
+
+          - task: DotNetCoreCLI@2
+            displayName: 'Pack Project as NuGet Package'
+            inputs:
+              command: 'pack'
+              packagesToPack: '**/*.csproj'
+              arguments: '--configuration $(buildConfiguration) --output $(packageOutputPath) /p:PackageVersion=$(packageVersion)'
+
+          - task: NuGetCommand@2
+            inputs:
+              command: 'push'
+              packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg'
+              nuGetFeedType: 'internal'
+              publishVstsFeed: 'b339dca2-1be3-4523-b6b2-f76a21b7943b/43c3de82-7c95-4b3e-a7f3-32e05e6c823c'
+
