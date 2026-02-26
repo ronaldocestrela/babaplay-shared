@@ -2,8 +2,8 @@ namespace BabaPlayShared.Library.Models.Requests.Identity;
 
 public class ChangePasswordRequest
 {
-    public required string UserId { get; set; }
-    public required string CurrentPassword { get; set; }
-    public required string NewPassword { get; set; }
-    public required string ConfirmNewPassword { get; set; }
+    public string? UserId { get; set; }
+    public string? CurrentPassword { get; set; }
+    public string? NewPassword { get; set; }
+    public string? ConfirmNewPassword { get; set; }
 }

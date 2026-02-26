@@ -2,16 +2,16 @@ namespace BabaPlayShared.Library.Models.Requests.Associados;
 
 public class CreateAssociadoRequest
 {
-    public required string FullName { get; set; }
-    public required string CPF { get; set; }
-    public DateTime DateOfBirth { get; set; }
-    public required string PhoneNumber { get; set; }
-    public required string Address { get; set; }
-    public required string City { get; set; }
-    public required string State { get; set; }
-    public required string ZipCode { get; set; }
-    public required string Position { get; set; }
-    public required string Email { get; set; }
-    public required string Password { get; set; }
-    public required string ConfirmPassword { get; set; }
+    public string? FullName { get; set; }
+    public string? CPF { get; set; }
+    public DateTime? DateOfBirth { get; set; }
+    public string? PhoneNumber { get; set; }
+    public string? Address { get; set; }
+    public string? City { get; set; }
+    public string? State { get; set; }
+    public string? ZipCode { get; set; }
+    public string? Position { get; set; }
+    public string? Email { get; set; }
+    public string? Password { get; set; }
+    public string? ConfirmPassword { get; set; }
 }
