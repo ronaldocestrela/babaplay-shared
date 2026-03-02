@@ -23,6 +23,7 @@
     <Folder Include="Models/Requests/Token/" />
     <Folder Include="Models/Responses/Associados/" />
     <Folder Include="Models/Responses/Associations/" />
+    <Folder Include="Models/Responses/Cors/" />
     <Folder Include="Models/Responses/Identity/" />
     <Folder Include="Models/Responses/Tenency/" />
     <Folder Include="Models/Responses/Token/" />
