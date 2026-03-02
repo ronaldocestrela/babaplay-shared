@@ -1,5 +1,2 @@
 namespace BabaPlayShared.Library.Models.Requests.Cors;
-public record CreateCorsOriginRequest
-{
-    public string? Origin { get; set; }
-}
+public record CreateCorsOriginRequest(string Origin);
