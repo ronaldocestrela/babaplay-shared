@@ -1,3 +1,5 @@
+using BabaPlayShared.Library.Enum;
+
 namespace BabaPlayShared.Library.Models.Responses.Associados;
 
 public class AssociadoResponse
@@ -11,7 +13,7 @@ public class AssociadoResponse
     public string? City { get; set; }
     public string? State { get; set; }
     public string? ZipCode { get; set; }
-    public string? Position { get; set; }
+    public List<SoccerPosition>? Position { get; set; }
     public string? Email { get; set; }
     public string? UserId { get; set; }
     public bool? IsActive { get; set; }

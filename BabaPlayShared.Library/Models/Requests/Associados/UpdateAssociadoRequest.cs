@@ -1,4 +1,5 @@
 using System;
+using BabaPlayShared.Library.Enum;
 
 namespace BabaPlayShared.Library.Models.Requests.Associados;
 
@@ -10,5 +11,5 @@ public class UpdateAssociadoRequest
     public string? City { get; set; }
     public string? State { get; set; }
     public string? ZipCode { get; set; }
-    public string? Position { get; set; }
+    public List<SoccerPosition>? Position { get; set; }
 }

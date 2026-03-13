@@ -1,3 +1,5 @@
+using BabaPlayShared.Library.Enum;
+
 namespace BabaPlayShared.Library.Models.Requests.Associados;
 
 public class CreateAssociadoRequest
@@ -10,7 +12,7 @@ public class CreateAssociadoRequest
     public string? City { get; set; }
     public string? State { get; set; }
     public string? ZipCode { get; set; }
-    public string? Position { get; set; }
+    public List<SoccerPosition>? Position { get; set; }
     public string? Email { get; set; }
     public string? Password { get; set; }
     public string? ConfirmPassword { get; set; }
